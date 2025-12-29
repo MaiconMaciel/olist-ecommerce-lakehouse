@@ -1,0 +1,25 @@
+# Ignore the virtual environment
+.venv/
+venv/
+
+# Ignore Compiled Python files
+__pycache__/
+*.pyc
+
+# Ignore Environment Variables (Passwords/Keys)
+.env
+
+# Ignore IDE settings (Optional, but good for teams)
+.vscode/
+.idea/
+
+# Ignore Databricks/Spark logs
+derby.log
+metastore_db/
+spark-warehouse/
+
+# ignore config files
+.config/
+
+# data files *for now
+data/

@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  etl_runner:
+    # Build using the Dockerfile in the current directory (.)
+    build: . 
+    
+    # THE MAGIC PORTAL (Volumes)
+    # Maps your Windows folder (.) to the Container folder (/app)
+    # This means if you save a file in VS Code, it updates inside Docker INSTANTLY.
+    volumes:
+      - .:/app
+      # Trick: Don't map the local Windows .venv folder into Linux
+      # This prevents conflicts between Windows/Linux libraries
+      - /app/.venv
+    
+    # Interactive mode (so you can see logs and print statements)
+    stdin_open: true 
+    tty: true
