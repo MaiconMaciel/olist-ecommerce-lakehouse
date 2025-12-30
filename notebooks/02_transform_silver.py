@@ -31,7 +31,7 @@ def run_silver_layer():
         target_schema = table_config["schema"]
         dedup_keys = table_config["keys"]
         
-        print(f"🔨 Processing: {table_name}")
+        print(f"Processing: {table_name}")
         
         try:
             # Read bronze

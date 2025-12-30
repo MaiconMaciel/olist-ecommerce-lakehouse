@@ -85,10 +85,18 @@ def check_gold():
     except Exception as e:
         print(f"XXXX Error reading Gold: {e}")
 
+def check():
+    # Read Bronze Reviews
+    df_bronze = spark.read.format("delta").load("/Volumes/workspace/default/olist-ecommerce-lakehouse/lakehouse/bronze/reviews")
+
+    # Show me what is inside 'review_score'
+    df_bronze.select("review_score", "review_creation_date").show(5, truncate=False)
+
 if __name__ == "__main__":
     #check gold layer
-    check_gold()
+    #check_gold()
 
+    check()
     # Check Orders (Dates)
     #check_table("orders", date_col="order_purchase_timestamp")
     
