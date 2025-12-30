@@ -1,9 +1,14 @@
 import sys
 import os
+
+try:
+    project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+except NameError:
+    project_root = os.getcwd()
+if project_root not in sys.path: sys.path.append(project_root)
+
 from pyspark.sql.functions import col, sum as _sum, avg
 
-
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from config.spark_settings import sparkSessionBuilder
 from config.paths import DataPaths
 
