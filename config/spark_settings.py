@@ -3,8 +3,6 @@ from delta import configure_spark_with_delta_pip
 from delta.tables import *
 
 
-
-
 def sparkSessionBuilder(app_name="spark session"):
     builder = SparkSession.builder \
       .appName(app_name) \
