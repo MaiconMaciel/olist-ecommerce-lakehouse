@@ -1,11 +1,12 @@
+import sys
+import os
+
 try:
     project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 except NameError:
     project_root = os.getcwd()
 if project_root not in sys.path: sys.path.append(project_root)
 
-import sys
-import os
 from pyspark.sql.functions import col, first, datediff
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
