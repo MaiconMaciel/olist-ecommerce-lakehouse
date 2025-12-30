@@ -10,7 +10,6 @@ def sparkSessionBuilder():
     if is_databricks:
         spark = SparkSession.builder.getOrCreate()
         spark.conf.set("spark.sql.ansi.enabled", "false")
-        spark.conf.set("spark.sql.storeAssignmentPolicy", "LEGACY")
         return spark
 
     else:

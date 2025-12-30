@@ -15,7 +15,7 @@ from config.paths import DataPaths
 spark = sparkSessionBuilder()
 
 def create_dim_products():
-    print("🔨 Building Gold: dim_products")
+    print("Building Gold: dim_products")
     
     # Read Silver Tables
     df_products = spark.read.format("delta").load(os.path.join(DataPaths.SILVER, "products"))
