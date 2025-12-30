@@ -11,12 +11,8 @@ from pyspark.sql import SparkSession
 from pyspark.sql.types import StructType, StructField, StringType, IntegerType, FloatType, DateType, BooleanType
 from pyspark.sql.functions import current_timestamp, input_file_name, lit
 
-# check use later
-from delta import configure_spark_with_delta_pip
 from delta.tables import *
 
-project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-sys.path.append(project_root)
 from config.spark_settings import sparkSessionBuilder
 
 from config.schemas import TABLES_CONFIG

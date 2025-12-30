@@ -19,8 +19,6 @@ spark = sparkSessionBuilder()
 
 table_config = SILVER_TABLES_CONFIG
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
 spark = sparkSessionBuilder()
 
 def run_silver_layer():

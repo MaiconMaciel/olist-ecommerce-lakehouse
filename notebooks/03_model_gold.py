@@ -9,7 +9,6 @@ if project_root not in sys.path: sys.path.append(project_root)
 
 from pyspark.sql.functions import col, first, datediff
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from config.spark_settings import sparkSessionBuilder
 from config.paths import DataPaths
 
