@@ -92,7 +92,7 @@ def check_gold():
 
 def check():
     # Read Bronze Reviews
-    df_bronze = spark.read.format("delta").load("/Volumes/workspace/default/olist-ecommerce-lakehouse/lakehouse/bronze/reviews")
+    df_bronze = spark.read.format("delta").load("/Volumes/workspace/default/olist-ecommerce-lakehouse/data/lakehouse/bronze/reviews")
 
     # Show me what is inside 'review_score'
     df_bronze.select("review_score", "review_creation_date").show(5, truncate=False)
