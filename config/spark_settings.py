@@ -6,18 +6,22 @@ def sparkSessionBuilder():
 
     is_databricks = os.getenv("DATABRICKS_RUNTIME_VERSION") is not None
 
+  # databricks
     if is_databricks:
-        # Get databricks session
-        return SparkSession.builder.getOrCreate()
+        spark = SparkSession.builder.getOrCreate()
+        spark.conf.set("spark.sql.ansi.enabled", "false")
+        spark.conf.set("spark.sql.storeAssignmentPolicy", "LEGACY")
+        return spark
 
     else:
-        # local development
+        # local
         return (
             SparkSession.builder
             .appName("OlistLakehouse")
-            .master("local[*]")  # Use all cores
-            .config("spark.jars.packages", "io.delta:delta-core_2.12:2.4.0")  # Enable Delta
+            .master("local[*]")
+            .config("spark.jars.packages", "io.delta:delta-core_2.12:2.4.0")
             .config("spark.sql.extensions", "io.delta.sql.DeltaSparkSessionExtension")
             .config("spark.sql.catalog.spark_catalog", "org.apache.spark.sql.delta.catalog.DeltaCatalog")
+            .config("spark.sql.ansi.enabled", "false") 
             .getOrCreate()
         )
