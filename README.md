@@ -1,11 +1,5 @@
 # Olist E-commerce Lakehouse: End-to-End Data Platform
 
-<div align="center">
-  <a href="#-project-overview">🇺🇸 English Version</a> | 
-  <a href="#-resumo-do-projeto">🇧🇷 Versão em Português</a>
-</div>
----
-
 ## Resumo do Projeto
 > *Note for Recruiters: This project documentation is primarily in English to demonstrate technical proficiency, but a portuguese summary is provided below.*
 
@@ -26,10 +20,12 @@
 
 ## 📋 Project Overview (English)
 
-![Python](https://img.shields.io/badge/Python-3.9-blue)
-![Spark](https://img.shields.io/badge/PySpark-3.5-orange)
-![Delta Lake](https://img.shields.io/badge/Delta_Lake-3.0-cyan)
-![Docker](https://img.shields.io/badge/Docker-Enabled-blueviolet)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Apache Spark](https://img.shields.io/badge/Apache%20Spark-E25A1C?style=for-the-badge&logo=apachespark&logoColor=white)
+![Databricks](https://img.shields.io/badge/Databricks-FF3621?style=for-the-badge&logo=databricks&logoColor=white)
+![Delta Lake](https://img.shields.io/badge/Delta_Lake-00A1E0?style=for-the-badge&logo=delta&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-003B57?style=for-the-badge&logo=postgresql&logoColor=white)
 
 ## 📋 Project Overview
 This project is a modern **Data Lakehouse** implementation built to analyze the [Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/olistbr/brazilian-ecommerce).
@@ -54,7 +50,9 @@ The pipeline processes data through three standardized layers:
 | **Silver** | Cleaned & Enriched | Delta | **Strict Schema Enforcement**. Data is deduplicated, types are cast (String → Timestamp/Float), and nulls are handled. |
 | **Gold** | Business Aggregates | Delta | **Star Schema** model. Joins tables into **Facts** (Transactions, Reviews) and **Dimensions** (Customers, Products) for easy reporting. |
 
-*(Optional: Insert an architecture diagram here from Draw.io)*
+<div align="center">
+  <img src="architecture_diagram.png" alt="Olist Lakehouse Medallion Architecture" width="800"/>
+</div>
 
 ---
 
