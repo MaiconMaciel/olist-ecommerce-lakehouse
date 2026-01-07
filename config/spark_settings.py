@@ -6,8 +6,9 @@ def sparkSessionBuilder():
 
     is_databricks = os.getenv("DATABRICKS_RUNTIME_VERSION") is not None
 
-  # databricks
+  
     if is_databricks:
+        # databricks
         spark = SparkSession.builder.getOrCreate()
         spark.conf.set("spark.sql.ansi.enabled", "false")
         return spark
